@@ -1,0 +1,33 @@
+<%- include("partials/header.ejs") -%>
+    <h1>Earthquake</h1>
+    <div>
+        <form action="/earthquake" method="post">
+            <label for="start-date">Start Date:</label>
+            <input type="date" id="start-date" name="startDate">
+            
+            <label for="end-date">End Date:</label>
+            <input type="date" id="end-date" name="endDate">
+            
+            <label for="magnitude">Magnitude:</label>
+            <input type="number" id="magnitude" name="magnitude">
+    
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <div>
+        <%  if(data!==null){ %>
+            <% data.features.forEach(ele=> { %>
+                <br>
+                <div>
+                    <p> Magnitude: <%=ele.properties.mag%></p>
+                    <p> Location: <%=ele.properties.place%></p>
+                </div>
+                <br>
+            <% }) %>
+        <% } %>
+            
+    </div>
+
+
+
+<%- include("partials/footer.ejs") -%>

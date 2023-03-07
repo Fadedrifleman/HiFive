@@ -1,0 +1,25 @@
+<%- include("partials/header.ejs") -%>
+    <h1>Faker</h1>
+    <div>
+        <form action="/faker" method="post">
+        <label for="options">Type:</label>
+        <select id="options" name="options">
+            <option value="addresses">addresses</option>
+            <option value="images">images</option>
+            <option value="places">places</option>
+            <option value="companies">companies</option>
+            <option value="persons">persons</option>
+        </select>
+        <br><br>
+        <input type="submit" value="Submit">
+        </form>
+    </div>
+    <br>
+    <div>
+        <%  if(data!==null){ %>
+            <%-JSON.stringify(data)%>
+        <% } %>
+    </div>
+
+
+<%- include("partials/footer.ejs") -%>
