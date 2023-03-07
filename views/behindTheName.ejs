@@ -1,0 +1,38 @@
+<%- include("partials/header.ejs") -%>
+    <h1>Behind the Name</h1>
+    <div>
+        <h2>Please enter your name and API key:</h2>
+        <form action="/behindTheName" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name"><p>Try Mat or Bella</p><br>
+            <label for="api-key">API Key:</label>
+            <input type="text" id="api-key" name="apiKey">
+            <p>To generate an API key please visit <a href="https://www.behindthename.com/api/gateway.php">Behind the Name API gateway</a></p><br>
+            <input type="submit" value="Submit">
+        </form>
+    <br>
+    
+    </div>
+    <br>
+    <div>
+        <%  if(data!==null){ %>
+            <% data.forEach(ele=>{ %>
+                <%  if(ele.gender=='m') {%>
+                    <div style="background-color:#5300FF;" >
+                        <%-JSON.stringify(data)%>
+                    </div>
+                <% } else if(ele.gender=='f') { %>
+                    <div style="background-color:#FFC0CB;" >
+                        <%-JSON.stringify(data)%>
+                    </div>
+                <% } else { %>
+                    <div style="background-color:red;" >
+                        <%-JSON.stringify(data)%>
+                    </div>
+                <% } %>
+                
+            <% }) %>
+        <% } %>
+    </div>
+
+<%- include("partials/footer.ejs") -%></br>
