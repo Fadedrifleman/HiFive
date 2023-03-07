@@ -1,0 +1,29 @@
+{
+  "name": "hifive",
+  "version": "1.0.0",
+  "description": "Create a web page that retrieves and displays data from an existing Web API using fetch(), based on the user's input. You might need to request an API Key.",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fadedrifleman/HiFive.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Fadedrifleman/HiFive/issues"
+  },
+  "homepage": "https://github.com/Fadedrifleman/HiFive#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "node-fetch": "^3.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.21"
+  }
+}
