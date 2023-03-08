@@ -1,0 +1,33 @@
+<%- include("partials/header.ejs") -%>
+    <head>
+    <meta charset="UTF-8">
+    <title>Card Display</title>
+    <style>
+        .card {
+        border: 1px solid black;
+        padding: 10px;
+        margin: 10px;
+        width: 300px;
+        }
+        .name {
+        font-weight: bold;
+        }
+        .species {
+        font-style: italic;
+        }
+    </style>
+    </head>
+    <body>
+    <h1>Rick and Morty</h1>
+    <div>
+        <%  if(data!==null){ %>
+            <% data.forEach(ele=> { %>
+                <div class="card">
+                    <div class="name"><p>Name: <% ele.name %></p></div>
+                    <div class="species"><p>Species: <% ele.species %></p></div>
+                </div>
+            <% }) %>
+        <% } %>
+    </body>
+
+<%- include("partials/footer.ejs") -%>
