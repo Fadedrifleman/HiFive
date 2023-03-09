@@ -1,25 +1,31 @@
-<%- include("partials/header.ejs") -%>
-    <h1>Faker</h1>
-    <div>
-        <form action="/faker" method="post">
-        <label for="options">Type:</label>
-        <select id="options" name="options">
-            <option value="addresses">addresses</option>
-            <option value="images">images</option>
-            <option value="places">places</option>
-            <option value="companies">companies</option>
-            <option value="persons">persons</option>
-        </select>
-        <br><br>
-        <input type="submit" value="Submit">
-        </form>
-    </div>
-    <br>
-    <div>
-        <%  if(data!==null){ %>
-            <%-JSON.stringify(data)%>
-        <% } %>
-    </div>
+<%- include("partials/header.ejs") -%> 
+<h1>Open Weather Map</h1>
+<div>
+    <form  action="/openWeatherMap" method="post">
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="name" placeholder="Enter your location">
+        <br>
+        <br>
+        <label for="apikey">API Key:</label>
+        <input type="text" id="apikey" name="apiKey" placeholder="Enter your API key">
+        <p>To generate an API key please visit <a href="https://home.openweathermap.org/api_keys">Open Weather Mao API key</a></p>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+<div class="weatherCard">
+    <%  if(data!==null){ %>
+            <br>
+            <div class="card">
+                <div class="bold"><p> Weather: <%= data.weather[0].main %></p></div>
+                <div class="italic"><p> Description: <%= data.weather[0].description %></p></div>
+                <div class="italic"><p> Temperature: <%= data.main.temp %>°C</p></div>
+                <div class="italic"><div class="italic"><img src=<%= url %> ></div></div>
+            </div>
+            <br>
+    <% } %>
+        
+</div>
 
 
 <%- include("partials/footer.ejs") -%>

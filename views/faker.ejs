@@ -17,7 +17,54 @@
     <br>
     <div>
         <%  if(data!==null){ %>
-            <%-JSON.stringify(data)%>
+            <% if(option=="addresses"){ %>
+                <div class="card">
+                    <div class="italic"><p>Street: <%= data.street %></p></div>
+                    <div class="italic"><p>Street Name: <%= data.streetName %></p></div>
+                    <div class="italic"><p>Building Number: <%= data.buildingNumber %></p></div>
+                    <div class="italic"><p>City: <%= data.city %></p></div>
+                    <div class="italic"><p>Zipcode: <%= data.zipcode %></p></div>
+                    <div class="italic"><p>Country: <%= data.country %></p></div>
+                    <div class="italic"><p>Country Code: <%= data.country_code %></p></div>
+                </div>
+            <% } %>
+            <% if(option=="images"){ %>
+                <div class="card">
+                    <div class="italic"><p>Title: <%= data.title %></p></div>
+                    <div class="italic"><p>Description: <%= data.description %></p></div>
+                    <div class="italic"><img src=<%= data.url %> ></div>
+                </div>
+            <% } %>            
+            <% if(option=="places"){ %>
+                <div class="card">
+                    <div class="italic"><p>Latitude: <%= data.latitude %></p></div>
+                    <div class="italic"><p>Longitude: <%= data.longitude %></p></div>
+                </div>
+            <% } %>            
+            <% if(option=="companies"){ %>
+                <div class="card">
+                    <div class="italic"><p>Name: <%= data.name %></p></div>
+                    <div class="italic"><p>Email: <%= data.email %></p></div>
+                    <div class="italic"><p>Vat: <%= data.vat %></p></div>
+                    <div class="italic"><p>Website: <%= data.website %></p></div>
+                    <div class="italic"><p>Phone: <%= data.phone %></p></div>
+                    <div class="italic"><p>Country: <%= data.country %></p></div>
+                    <div class="italic"><img src=<%= data.image %> ></div>
+                </div>
+            <% } %>            
+            <% if(option=="persons"){ %>
+                <div class="card">
+                    <div class="italic"><p>First Name: <%= data.firstName %></p></div>
+                    <div class="italic"><p>Last Name: <%= data.lastName %></p></div>
+                    <div class="italic"><p>Email: <%= data.email %></p></div>
+                    <div class="italic"><p>Phone: <%= data.phone %></p></div>
+                    <div class="italic"><p>Birthday: <%= data.birthday %></p></div>
+                    <div class="italic"><p>Gender: <%= data.gender %></p></div>
+                    <div class="italic"><p>Address: <%= data.address.street %>, <%= data.address.streetName %>, <%= data.address.buildingNumber %>, <%= data.address.city %>, <%= data.address.zipcode %>, <%= data.address.country %>, <%= data.address.country_code %></p></div>
+                    <div class="italic"><p>Website: <%= data.website %></p></div>
+                    <div class="italic"><img src=<%= data.image %> ></div>
+                </div>
+            <% } %>
         <% } %>
     </div>
 

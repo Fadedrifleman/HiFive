@@ -18,16 +18,22 @@
         <%  if(data!==null){ %>
             <% data.forEach(ele=>{ %>
                 <%  if(ele.gender=='m') {%>
-                    <div style="background-color:#5300FF;" >
-                        <%-JSON.stringify(data)%>
+                    <div class="card" style="background-color:#5300FF;">
+                        <div class="name"><p>Name: <%= ele.name %></p></div>
+                        <div class="species"><p>Gender: <%= ele.gender %></p></div>
+                        <div class="species"><p>Language: <%= ele.usages[0].usage_full %></p></div>
                     </div>
                 <% } else if(ele.gender=='f') { %>
-                    <div style="background-color:#FFC0CB;" >
-                        <%-JSON.stringify(data)%>
+                    <div class="card" style="background-color:#FFC0CB;">
+                        <div class="name"><p>Name: <%= ele.name %></p></div>
+                        <div class="species"><p>Gender: <%= ele.gender %></p></div>
+                        <div class="species"><p>Language: <%= ele.usages[0].usage_full %></p></div>
                     </div>
-                <% } else { %>
-                    <div style="background-color:red;" >
-                        <%-JSON.stringify(data)%>
+                <% } else { %>                   
+                    <div class="card" style="background-color:red;">
+                        <div class="name"><p>Name: <%= ele.name %></p></div>
+                        <div class="species"><p>Gender: <%= ele.gender %></p></div>
+                        <div class="species"><p>Language: <%= ele.usages[0].usage_full %></p></div>
                     </div>
                 <% } %>
                 

@@ -6,14 +6,12 @@ export const getWeatherPage = async (req, res)=> {
 
 export const getWeatherDetail = async (req, res)=> {
     const { name, apiKey} = req.body;
-    await fetch(`https://www.behindthename.com/api/lookup.json?name=${name}&key=${apiKey}`)
+    await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${name}&units=metric&appid=${apiKey}`)
     .then((response)=> {
         return response.json();
     })
     .then((data)=> {
-        if(data.error){
-            res.render("behindTheName", {data: [{error:"Name not found", gender:'-'}]});
-        }
-        res.render("behindTheName", {data});
+        const url = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`
+        res.render("openWeatherMap", {data: data, url: url});
     });
 }

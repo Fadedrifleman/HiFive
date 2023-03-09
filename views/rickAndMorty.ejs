@@ -1,15 +1,22 @@
 <%- include("partials/header.ejs") -%>
-    <body>
     <h1>Rick and Morty</h1>
+    <form action="/rickAndMorty" method="POST">
+        <button type="submit">Get Character Details</button>
+    </form>
     <div>
         <%  if(data!==null){ %>
             <% data.forEach(ele=> { %>
                 <div class="card">
-                    <div class="name"><p>Name: <% ele.name %></p></div>
-                    <div class="species"><p>Species: <% ele.species %></p></div>
+                    <div class="bold"><p>Name: <%= ele.name %></p></div>
+                    <div class="italic"><p>Status: <%= ele.status %></p></div>
+                    <div class="italic"><p>Species: <%= ele.species %></p></div>
+                    <div class="italic"><p>Type: <%= ele.type %></p></div>
+                    <div class="italic"><p>Gender: <%= ele.gender %></p></div>
+                    <div class="italic"><p>Origin: <%= ele.origin %></p></div>
+                    <div class="italic"><p>Location: <%= ele.location %></p></div>
+                    <div class="italic"><img src=<%= ele.image %>></div>
                 </div>
             <% }) %>
         <% } %>
-    </body>
 
 <%- include("partials/footer.ejs") -%>

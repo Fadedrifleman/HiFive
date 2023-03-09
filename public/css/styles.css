@@ -42,10 +42,14 @@ position: relative;
     width: 300px;
 }
 
-.name {
+.bold {
     font-weight: bold;
 }
 
-.species {
+.italic {
     font-style: italic;
+}
+
+.weatherCard {
+    background-color: aquamarine;
 }

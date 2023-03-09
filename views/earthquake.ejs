@@ -18,9 +18,9 @@
         <%  if(data!==null){ %>
             <% data.features.forEach(ele=> { %>
                 <br>
-                <div>
-                    <p> Magnitude: <%=ele.properties.mag%></p>
-                    <p> Location: <%=ele.properties.place%></p>
+                <div class="card">
+                    <div class="bold"><p> Magnitude: <%=ele.properties.mag%></p></div>
+                    <div class="italic"><p> Location: <%=ele.properties.place%></p></div>
                 </div>
                 <br>
             <% }) %>

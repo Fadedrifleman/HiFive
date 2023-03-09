@@ -6,13 +6,12 @@ export const getFaker = async (req, res)=> {
 
 export const getFakeDetail = async (req, res)=> {
     const { options } = req.body;
-    console.log(options);
     await fetch(`https://fakerapi.it/api/v1/${options}?_quantity=1&_locale=en_EN`)
     .then((response)=> {
         return response.json();
     })
     .then((data)=> {
         const output = data.data[0];
-        res.render("faker", {data: output});
+        res.render("faker", {data: output, option: options});
     });
 }
